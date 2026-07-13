@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "username": "basic_user",
+      "password_hash": "ff7bd97b1a7789ddd2775122fd6817f3173672da9f802ceec57f284325bf589f",
+      "role": "basic",
+      "active": true
+    },
+    {
+      "username": "analyst_user",
+      "password_hash": "ff7bd97b1a7789ddd2775122fd6817f3173672da9f802ceec57f284325bf589f",
+      "role": "analyst",
+      "active": true
+    },
+    {
+      "username": "admin_user",
+      "password_hash": "ff7bd97b1a7789ddd2775122fd6817f3173672da9f802ceec57f284325bf589f",
+      "role": "admin",
+      "active": true
+    }
+  ],
+  "notes": {
+    "password_hint": "Default demo password for all users is: Password@123",
+    "hash_algorithm": "sha256"
+  }
+}

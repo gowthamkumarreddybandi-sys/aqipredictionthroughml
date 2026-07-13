@@ -1,0 +1,42 @@
+data:
+  source: "my_air_data"
+  pattern: "*.csv"
+
+model:
+  random_forest:
+    n_estimators: 200
+    max_depth: 30
+    min_samples_split: 10
+    min_samples_leaf: 5
+    max_features: 'sqrt'
+    bootstrap: true
+    max_samples: 0.8
+    n_jobs: -1                # for final training; grid search will use its own n_jobs
+    random_state: 42
+  linear_regression:
+    fit_intercept: true
+  decision_tree:
+    random_state: 42
+
+training:
+  test_size: 0.25
+  random_state: 42
+  perform_grid_search: true
+  grid_search_n_jobs: 1   # <-- add this line
+  grid_search_params:
+    n_estimators: [100, 200]
+    max_depth: [20, 30]
+
+mlflow:
+  experiment_name: "Air_Quality_Model"
+  tracking_uri: "sqlite:///mlflow.db"
+
+clustering:
+  perform_kmeans: true
+  n_clusters: 5
+  perform_pca: true
+  pca_components: 2
+
+output:
+  model_save_path: "random_forest_model.pkl"
+  plots_dir: "plots"
